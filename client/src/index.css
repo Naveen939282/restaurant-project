@@ -1,0 +1,316 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =====================================================
+   CUSTOM STYLES - Gongura Hotel
+   ===================================================== */
+
+/* Base Styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-body text-gray-800 bg-gray-50;
+    @apply transition-colors duration-300;
+  }
+  
+  .dark body {
+    @apply bg-dark text-gray-100;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-semibold;
+  }
+}
+
+/* Component Styles */
+@layer components {
+  /* Button Styles */
+  .btn {
+    @apply px-6 py-3 rounded-lg font-medium transition-all duration-300;
+    @apply transform hover:scale-105 hover:shadow-lg;
+    @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-red-700;
+    @apply focus:ring-primary;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-white hover:bg-blue-800;
+    @apply focus:ring-secondary;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-primary text-primary;
+    @apply hover:bg-primary hover:text-white;
+  }
+  
+  /* Card Styles */
+  .card {
+    @apply bg-white rounded-xl shadow-md overflow-hidden;
+    @apply transition-all duration-300 hover:shadow-xl;
+    @apply transform hover:-translate-y-1;
+  }
+  
+  .dark .card {
+    @apply bg-darkSecondary;
+  }
+  
+  /* Input Styles */
+  .input {
+    @apply w-full px-4 py-3 rounded-lg border-2 border-gray-200;
+    @apply focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20;
+    @apply transition-all duration-300;
+  }
+  
+  .dark .input {
+    @apply bg-darkSecondary border-gray-600 text-white;
+  }
+  
+  /* Badge Styles */
+  .badge {
+    @apply px-3 py-1 text-xs font-medium rounded-full;
+  }
+  
+  .badge-primary {
+    @apply bg-primary text-white;
+  }
+  
+  .badge-success {
+    @apply bg-green-500 text-white;
+  }
+  
+  .badge-warning {
+    @apply bg-yellow-500 text-white;
+  }
+  
+  /* Section Styles */
+  .section {
+    @apply py-16 px-4;
+  }
+  
+  .container-custom {
+    @apply max-w-7xl mx-auto;
+  }
+  
+  /* Navbar */
+  .navbar {
+    @apply fixed top-0 left-0 right-0 z-50;
+    @apply bg-white/95 backdrop-blur-sm shadow-md;
+    @apply transition-all duration-300;
+  }
+  
+  .dark .navbar {
+    @apply bg-dark/95;
+  }
+  
+  /* Hero Section */
+  .hero {
+    @apply relative h-screen min-h-[600px];
+    @apply flex items-center justify-center;
+    @apply bg-cover bg-center bg-no-repeat;
+  }
+  
+  .hero-overlay {
+    @apply absolute inset-0 bg-black/50;
+  }
+  
+  .hero-content {
+    @apply relative z-10 text-center text-white;
+    @apply px-4 max-w-4xl mx-auto;
+  }
+  
+  /* Menu Card */
+  .menu-card {
+    @apply card p-4;
+  }
+  
+  .menu-card-image {
+    @apply w-full h-48 object-cover rounded-lg mb-4;
+  }
+  
+  .menu-card-title {
+    @apply text-lg font-semibold mb-2;
+  }
+  
+  .menu-card-price {
+    @apply text-primary font-bold text-xl;
+  }
+  
+  /* Cart Sidebar */
+  .cart-sidebar {
+    @apply fixed top-0 right-0 h-full w-full sm:w-96;
+    @apply bg-white shadow-2xl z-50;
+    @apply transform transition-transform duration-300;
+    @apply overflow-y-auto;
+  }
+  
+  .dark .cart-sidebar {
+    @apply bg-darkSecondary;
+  }
+  
+  /* Order Status */
+  .status-received {
+    @apply bg-blue-500;
+  }
+  
+  .status-preparing {
+    @apply bg-yellow-500;
+  }
+  
+  .status-ready {
+    @apply bg-orange-500;
+  }
+  
+  .status-delivered {
+    @apply bg-green-500;
+  }
+  
+  .status-cancelled {
+    @apply bg-red-500;
+  }
+}
+
+/* Utility Classes */
+@layer utilities {
+  /* Text Gradient */
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary to-accent;
+  }
+  
+  /* Scrollbar */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Glass Effect */
+  .glass {
+    @apply bg-white/10 backdrop-blur-md;
+    @apply border border-white/20;
+  }
+  
+  /* Animation Delays */
+  .animation-delay-100 {
+    animation-delay: 100ms;
+  }
+  
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+  
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+}
+
+/* =====================================================
+   ANIMATIONS
+   ===================================================== */
+
+/* Float Animation for WhatsApp Button */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.float-animation {
+  animation: float 2s ease-in-out infinite;
+}
+
+/* Pulse Animation for New Orders */
+@keyframes orderPulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.order-pulse {
+  animation: orderPulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Shimmer Effect for Loading */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    #f0f0f0 25%,
+    #e0e0e0 50%,
+    #f0f0f0 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+.dark .shimmer {
+  background: linear-gradient(
+    90deg,
+    #2d2d2d 25%,
+    #3d3d3d 50%,
+    #2d2d2d 75%
+  );
+  background-size: 200% 100%;
+}
+
+/* =====================================================
+   MEDIA QUERIES
+   ===================================================== */
+
+/* Small screens */
+@media (max-width: 640px) {
+  .hero-content h1 {
+    @apply text-3xl sm:text-4xl md:text-5xl;
+  }
+  
+  .section {
+    @apply py-12;
+  }
+}
+
+/* Medium screens */
+@media (min-width: 768px) {
+  .hero-content h1 {
+    @apply text-4xl md:text-6xl;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1024px) {
+  .container-custom {
+    @apply px-8;
+  }
+}
+
