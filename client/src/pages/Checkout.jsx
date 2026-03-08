@@ -2,7 +2,7 @@ import { useState, useContext, useEffect } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { AppContext } from '../App'
 import axios from 'axios'
-import { FiCheck, FiCreditCard, FiMoney } from 'react-icons/fi'
+import { FiCheck, FiCreditCard, FiDollarSign } from 'react-icons/fi'
 
 const Checkout = () => {
   const { user, cart, cartTotal, clearCart } = useContext(AppContext)
@@ -198,7 +198,7 @@ const Checkout = () => {
                       onChange={handleChange}
                       className="mr-3"
                     />
-                    <FiMoney className="w-5 h-5 mr-3 text-primary" />
+                    <FiDollarSign className="w-5 h-5 mr-3 text-primary" />
                     <div>
                       <span className="font-medium">Cash on Delivery</span>
                       <p className="text-sm text-gray-500">Pay when you receive your order</p>
