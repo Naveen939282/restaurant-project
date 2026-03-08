@@ -23,8 +23,8 @@ import AdminReviews from './pages/admin/Reviews'
 // Create Context
 export const AppContext = createContext()
 
-// API Base URL
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api'
+// API Base URL - Use environment variable for production
+const API_URL = import.meta.env.VITE_API_URL || 'https://restaurant-project-product.up.railway.app/api'
 
 // Axios configuration
 axios.defaults.baseURL = API_URL
